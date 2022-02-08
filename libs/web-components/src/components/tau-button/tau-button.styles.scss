@@ -1,0 +1,95 @@
+:host {
+  * {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    user-select: none;
+    -webkit-user-drag: none;
+  }
+
+  display: block;
+
+  width: fit-content;
+
+  font-size: var(--tau-font-size, 95%);
+
+  tau-ripple {
+    --tau-ripple: #fff;
+    cursor: inherit;
+  }
+
+  button,
+  a {
+    width: fit-content;
+    min-height: 37px;
+
+    position: relative;
+    overflow: hidden;
+    cursor: inherit;
+
+    padding: 10px 28px;
+    border-radius: var(--tau-radius);
+    text-decoration: none;
+
+    background: var(--tau-primary);
+    font-family: var(--tau-font-family, 'Open Sans', sans-serif);
+    font-size: 0.875em;
+    color: var(--tau-text);
+    transition: all 0.15s;
+    letter-spacing: var(--tau-letter-spacing);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+
+    &:hover:not(.disable) {
+      transition: all 0.3s;
+      background: var(--tau-hover, var(--tau-primary));
+    }
+
+    &.block {
+      width: 100%;
+    }
+
+    &.disable {
+      opacity: 0.4;
+      cursor: default;
+
+      ::slotted(*) {
+        cursor: default;
+      }
+    }
+
+    &.large {
+      min-height: 45px;
+      padding: 10px 36px;
+    }
+
+    &.medium {
+      min-height: 40px;
+      padding: 10px 34px;
+    }
+  }
+}
+
+:host([block]) {
+  width: 100%;
+}
+
+:host(.outline) {
+  tau-ripple {
+    --tau-ripple: var(--tau-foreground);
+  }
+
+  button,
+  a {
+    border: 1px solid var(--tau-primary);
+    color: var(--tau-primary);
+    background: transparent;
+
+    &:hover {
+      background: transparent;
+    }
+  }
+}

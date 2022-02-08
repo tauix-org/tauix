@@ -1,0 +1,63 @@
+:host {
+  * {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    user-select: none;
+    -webkit-user-drag: none;
+  }
+
+  display: block;
+
+  width: fit-content;
+  height: fit-content;
+
+  div {
+    width: 23px;
+    height: 23px;
+
+    border-radius: var(--tau-radius);
+    border: 1px solid var(--tau-border);
+    transition: all 0.3s;
+
+    display: grid;
+    place-items: center;
+
+    tau-icon {
+      width: 17px;
+      height: 17px;
+
+      display: grid;
+      place-items: center;
+
+      color: transparent;
+
+      transition: all 0.3s;
+    }
+
+    &.checked {
+      background: var(--tau-primary);
+      border-color: var(--tau-primary);
+    }
+
+    &.medium {
+      width: 27px;
+      height: 27px;
+
+      tau-icon {
+        width: 19px;
+        height: 19px;
+      }
+    }
+
+    &.large {
+      width: 30px;
+      height: 30px;
+
+      tau-icon {
+        width: 21px;
+        height: 21px;
+      }
+    }
+  }
+}

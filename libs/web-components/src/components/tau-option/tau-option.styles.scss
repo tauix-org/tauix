@@ -1,0 +1,13 @@
+:host {
+  *:not([slot]) {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+  }
+
+  display: block;
+
+  .wrapper {
+    justify-content: space-between;
+  }
+}

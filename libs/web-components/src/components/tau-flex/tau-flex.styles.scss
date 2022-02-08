@@ -1,0 +1,54 @@
+:host {
+  * {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+  }
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+:host([space-between]) {
+  justify-content: space-between;
+}
+
+:host([space-around]) {
+  justify-content: space-around;
+}
+
+:host([space-evenly]) {
+  justify-content: space-evenly;
+}
+
+:host([space-start]) {
+  justify-content: flex-start;
+}
+
+:host([space-end]) {
+  justify-content: flex-end;
+}
+
+:host([space-center]) {
+  justify-content: center;
+}
+
+:host([center]) {
+  align-items: center;
+}
+
+:host([start]) {
+  align-items: flex-start;
+}
+
+:host([end]) {
+  align-items: flex-end;
+}
+
+:host([base]) {
+  align-items: baseline;
+}
+
+
+

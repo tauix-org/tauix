@@ -1,0 +1,17 @@
+:host {
+  * {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    user-select: none;
+    -webkit-user-drag: none;
+  }
+
+  display: block;
+
+  box-shadow: var(--tau-border) 0px 0.8px 0px 0px,
+    var(--tau-border) 0px 0px 0px 0.8px;
+  border-radius: var(--tau-radius);
+
+  overflow: hidden;
+}

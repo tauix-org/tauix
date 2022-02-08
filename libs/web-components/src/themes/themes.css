@@ -1,0 +1,15 @@
+.tau-light {
+  --tau-primary: #1e52b3;
+  --tau-hover: #1e52b3;
+  --tau-focus: #306cdb;
+  --tau-text: #1a1a1a;
+  --tau-border: #cac9c9;
+  --tau-placeholder: #818181;
+  --tau-background: #FFFFFF;
+  --tau-foreground: #e3eeff;
+  --tau-page: #FFFFFF;
+  --tau-font-family: 'Ubuntu', sans-serif;
+  --tau-letter-spacing: 0.4px ;
+  --tau-font-size: 95%;
+  --tau-radius: 5px;
+}

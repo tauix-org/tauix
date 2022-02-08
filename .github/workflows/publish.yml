@@ -1,0 +1,26 @@
+name: Publish to GitHub Packages
+on:
+  release:
+    types: [published]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '16.x'
+          always-auth: true
+          registry-url: 'https://registry.npmjs.org'
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+          WEB_HOOK: ${{ secrets.DISCORD_WEBHOOK}}
+      - run: yarn install
+      - run: cd ./libs/web-components && yarn test
+      - run: cd ./libs/web-components && bash ./scripts/publish.sh
+      - run: cd ./libs/web-components/dist && npm publish
+      - run: |
+          curl -X POST -H "Content-Type: application/json" -d '{"content": "Hey, uma nova versão de Tau UI foi lançada !"}' ${{ secrets.DISCORD_WEBHOOK }}

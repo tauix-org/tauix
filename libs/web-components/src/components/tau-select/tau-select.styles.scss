@@ -1,0 +1,159 @@
+:host {
+  * {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    user-select: none;
+    -webkit-user-drag: none;
+  }
+
+  display: block;
+
+  width: fit-content;
+  height: fit-content;
+
+  font-size: var(--tau-font-size, 95%);
+
+  .wrapper {
+    width: 100%;
+
+    position: relative;
+
+    .select-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      height: 40px;
+      padding: 7px 12px;
+
+      border: 1px solid var(--tau-border);
+
+      background: var(--tau-background, #ffffff);
+      color: var(--tau-placeholder, #818181);
+
+      font-family: var(--tau-font-family, 'Open Sans', sans-serif);
+      font-size: 0.875em;
+      border-radius: 5px;
+      letter-spacing: var(--tau-letter-spacing);
+      transition: all 0.15s;
+      cursor: default;
+
+      div {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+
+        tau-icon {
+          width: 20px;
+          height: 20px;
+
+          display: grid;
+          place-items: center;
+
+          margin-right: 10px;
+        }
+      }
+
+      > tau-icon {
+        width: 1.5em;
+
+        display: grid;
+        place-items: center;
+
+        transition: all 0.15s;
+
+        svg,
+        svg path {
+          stroke-width: 1px;
+        }
+      }
+    }
+
+    .select-body {
+      width: 100%;
+
+      overflow-x: hidden;
+      overflow-y: hidden;
+
+      max-height: 500px;
+
+      position: absolute;
+
+      top: 44px;
+      pointer-events: none;
+      border-radius: 5px;
+      opacity: 0;
+      z-index: 10;
+
+      box-shadow: var(--tau-border) 0px 0.8px 0px 0px, var(--tau-border) 0px 0px 0px 0.8px;
+
+      transition: all 0.15s;
+
+      .select-option {
+        width: 100%;
+        height: 35px;
+
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+
+        background: var(--tau-background);
+        color: var(--tau-placeholder);
+
+        font-family: var(--tau-font-family, 'Open Sans', sans-serif);
+        font-size: 0.875em;
+        transition: all 0.15s;
+        padding: 7px 12px;
+        cursor: default;
+        letter-spacing: var(--tau-letter-spacing);
+
+        tau-icon {
+          width: 20px;
+          height: 20px;
+
+          display: grid;
+          place-items: center;
+
+          margin-right: 10px;
+        }
+
+        &.selected {
+          color: var(--tau-text);
+        }
+
+        &:hover {
+          color: var(--tau-text);
+          background: var(--tau-foreground);
+          transition: all 0.3s;
+        }
+      }
+    }
+
+    &.open {
+      .select-header {
+        color: var(--tau-text);
+        border-color: var(--tau-focus);
+        transition: all 0.3s;
+
+        > tau-icon {
+          transform: rotate(180deg);
+
+          transition: all 0.3s;
+        }
+      }
+
+      .select-body {
+        pointer-events: all;
+        opacity: 1;
+        transition: all 0.3s;
+      }
+    }
+
+    &.active {
+      .select-header {
+        border-color: var(--tau-primary);
+      }
+    }
+  }
+}

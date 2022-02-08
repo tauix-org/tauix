@@ -1,0 +1,10 @@
+tau-accordion-content {
+  display: block;
+  overflow: hidden;
+
+  transition: all 0.15s;
+
+  &.active {
+    transition: all 0.3s;
+  }
+}

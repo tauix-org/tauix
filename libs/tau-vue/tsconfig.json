@@ -1,0 +1,34 @@
+{
+  "compilerOptions": {
+    "allowUnreachableCode": false,
+    "allowSyntheticDefaultImports": true,
+    "declaration": true,
+    "strict": false,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "esModuleInterop": true,
+    "module": "commonjs",
+    "target": "es2016",
+    "noImplicitAny": true,
+    "suppressExcessPropertyErrors": true,
+    "noEmitOnError": true,
+    "allowJs": true,
+    "noImplicitReturns": false,
+    "noUnusedLocals": true,
+    "suppressImplicitAnyIndexErrors": true,
+    "skipLibCheck": true,
+    "noUnusedParameters": true,
+    "outDir": "../web-components/dist/vue",
+    "removeComments": false,
+    "sourceMap": true,
+    "jsx": "react"
+  },
+  "errorReporting": {
+    "excludeCodes": [7005]
+  },
+  "include": ["forerunner/**/*.ts", "forerunner/**/*.tsx"],
+  "exclude": ["node_modules"],
+  "files": ["./index.ts"],
+  "compileOnSave": false,
+  "buildOnSave": false
+}

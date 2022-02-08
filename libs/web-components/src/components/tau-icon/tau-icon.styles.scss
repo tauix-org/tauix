@@ -1,0 +1,14 @@
+tau-icon {
+  display: block;
+  
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+tau-icon[center] {
+  display: grid;
+  place-items: center;
+}

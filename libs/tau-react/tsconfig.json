@@ -1,0 +1,38 @@
+{
+  "compilerOptions": {
+    "allowUnreachableCode": false,
+    "allowSyntheticDefaultImports": true,
+    "declaration": true,
+    "strict": false,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "esModuleInterop": true,
+    "lib": ["dom", "esnext"],
+    "module": "esnext",
+    "moduleResolution": "node",
+    "noImplicitAny": false,
+    "noImplicitReturns": false,
+    "noUnusedLocals": false,
+    "noEmitOnError": true,
+    "skipLibCheck": true,
+    "noUnusedParameters": true,
+    "outDir": "../web-components/dist/react",
+    "suppressImplicitAnyIndexErrors": true,
+    "removeComments": false,
+    "sourceMap": true,
+    "jsx": "react",
+    "target": "esnext",
+    "allowJs": true,
+    "checkJs": false,
+    "forceConsistentCasingInFileNames": true
+  },
+  "include": ["forerunner/**/*.ts", "forerunner/**/*.tsx"],
+  "exclude": ["node_modules", "./forerunner/components.ts"],
+  "files": ["./index.ts"],
+  "compileOnSave": false,
+  "errorReporting": {
+    "excludeCodes": [7005]
+  },
+
+  "buildOnSave": false
+}

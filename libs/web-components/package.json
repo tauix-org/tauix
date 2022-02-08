@@ -1,0 +1,42 @@
+{
+  "name": "tauix",
+  "version": "0.0.1",
+  "description": "Tau UI Components",
+  "main": "./dist/stencil/index.cjs.js",
+  "module": "./dist/stencil/index.js",
+  "es2015": ".dist/esm/index.mjs",
+  "es2017": ".dist/esm/index.mjs",
+  "types": "./dist/stencil/types/components.d.ts",
+  "collection": "./dist/stencil/collection/collection-manifest.json",
+  "collection:main": "dist/collection/index.js",
+  "unpkg": "./dist/stencil/tauix/tauix.esm.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tauix/tau"
+  },
+  "files": [
+    "dist/stencil",
+    "dist"
+  ],
+  "keywords": [
+    "tau"
+  ],
+  "scripts": {
+    "build": "stencil build",
+    "dev": " stencil build --watch",
+    "generate": "stencil generate",
+    "test": "stencil test --spec --e2e",
+    "test.watch": "stencil test --spec --e2e --watchAll"
+  },
+  "devDependencies": {
+    "@stencil/core": "^2.11.0",
+    "@stencil/react-output-target": "^0.2.0",
+    "@stencil/sass": "^1.5.2",
+    "@stencil/vue-output-target": "^0.6.0",
+    "@types/jest": "^26.0.24",
+    "jest": "^26.6.3",
+    "jest-cli": "^26.6.3",
+    "puppeteer": "^10.0.0"
+  },
+  "license": "MIT"
+}

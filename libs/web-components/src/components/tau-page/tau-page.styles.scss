@@ -1,0 +1,21 @@
+:host {
+  * {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+  }
+
+  display: block;
+
+  width: 100vw;
+  height: 100vh;
+
+  overflow: hidden;
+
+  background: var(--tau-page);
+
+  &.scroll {
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+}

@@ -1,0 +1,47 @@
+tau-accordion-bar {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+  user-select: none;
+  -webkit-user-drag: none;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 10px 20px;
+  min-height: 40px;
+
+  background: var(--tau-background);
+  border-bottom: 1px solid transparent;
+  transition: all 0.15s;
+
+  tau-icon:last-child {
+    width: 24px;
+    height: 24px;
+
+    transition: all 0.15s;
+    transform: rotate(0deg);
+    color: var(--tau-text);
+
+    path {
+      stroke-width: 1;
+    }
+  }
+
+  tau-ripple {
+    background: var(--tau-foreground);
+  }
+
+  &.active {
+    tau-icon:last-child {
+      transition: all 0.3s;
+      color: var(--tau-primary);
+
+      transform: rotate(180deg);
+    }
+
+    transition: all 0.3s;
+    border-bottom-color: var(--tau-border);
+  }
+}
