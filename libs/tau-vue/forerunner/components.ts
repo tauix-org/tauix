@@ -62,7 +62,7 @@ export const TauDrawer = /*@__PURE__*/ defineContainer<JSX.TauDrawer>('tau-drawe
 export const TauFlex = /*@__PURE__*/ defineContainer<JSX.TauFlex>('tau-flex', undefined);
 
 
-export const tauixcon = /*@__PURE__*/ defineContainer<JSX.tauixcon>('tau-icon', undefined, [
+export const TauIcon = /*@__PURE__*/ defineContainer<JSX.TauIcon>('tau-icon', undefined, [
   'url',
   'fill',
   'name',

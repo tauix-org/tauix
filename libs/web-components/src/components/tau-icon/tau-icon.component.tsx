@@ -23,7 +23,7 @@ export class tauixcon {
 
   @Prop() svg: string;
 
-  @Element() host: HTMLtauixconElement;
+  @Element() host: HTMLTauIconElement;
 
   @Watch('url')
   async makeIcon() {

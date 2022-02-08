@@ -35,7 +35,7 @@ export class TauCheckbox {
 
   @Element() host: HTMLTauCheckboxElement;
 
-  iconCheck: HTMLtauixconElement;
+  iconCheck: HTMLTauIconElement;
 
   checkboxWrapper: HTMLElement;
 

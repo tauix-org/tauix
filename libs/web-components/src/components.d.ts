@@ -42,7 +42,7 @@ export namespace Components {
     }
     interface TauFlex {
     }
-    interface tauixcon {
+    interface TauIcon {
         "alt": string;
         "fill": 'outline' | 'solid';
         "height": number;
@@ -113,11 +113,11 @@ declare global {
         prototype: HTMLTauFlexElement;
         new (): HTMLTauFlexElement;
     };
-    interface HTMLtauixconElement extends Components.tauixcon, HTMLStencilElement {
+    interface HTMLTauIconElement extends Components.TauIcon, HTMLStencilElement {
     }
-    var HTMLtauixconElement: {
-        prototype: HTMLtauixconElement;
-        new (): HTMLtauixconElement;
+    var HTMLTauIconElement: {
+        prototype: HTMLTauIconElement;
+        new (): HTMLTauIconElement;
     };
     interface HTMLTauOptionElement extends Components.TauOption, HTMLStencilElement {
     }
@@ -157,7 +157,7 @@ declare global {
         "tau-checkbox": HTMLTauCheckboxElement;
         "tau-drawer": HTMLTauDrawerElement;
         "tau-flex": HTMLTauFlexElement;
-        "tau-icon": HTMLtauixconElement;
+        "tau-icon": HTMLTauIconElement;
         "tau-option": HTMLTauOptionElement;
         "tau-page": HTMLTauPageElement;
         "tau-ripple": HTMLTauRippleElement;
@@ -207,7 +207,7 @@ declare namespace LocalJSX {
     }
     interface TauFlex {
     }
-    interface tauixcon {
+    interface TauIcon {
         "alt"?: string;
         "fill"?: 'outline' | 'solid';
         "height"?: number;
@@ -244,7 +244,7 @@ declare namespace LocalJSX {
         "tau-checkbox": TauCheckbox;
         "tau-drawer": TauDrawer;
         "tau-flex": TauFlex;
-        "tau-icon": tauixcon;
+        "tau-icon": TauIcon;
         "tau-option": TauOption;
         "tau-page": TauPage;
         "tau-ripple": TauRipple;
@@ -263,7 +263,7 @@ declare module "@stencil/core" {
             "tau-checkbox": LocalJSX.TauCheckbox & JSXBase.HTMLAttributes<HTMLTauCheckboxElement>;
             "tau-drawer": LocalJSX.TauDrawer & JSXBase.HTMLAttributes<HTMLTauDrawerElement>;
             "tau-flex": LocalJSX.TauFlex & JSXBase.HTMLAttributes<HTMLTauFlexElement>;
-            "tau-icon": LocalJSX.tauixcon & JSXBase.HTMLAttributes<HTMLtauixconElement>;
+            "tau-icon": LocalJSX.TauIcon & JSXBase.HTMLAttributes<HTMLTauIconElement>;
             "tau-option": LocalJSX.TauOption & JSXBase.HTMLAttributes<HTMLTauOptionElement>;
             "tau-page": LocalJSX.TauPage & JSXBase.HTMLAttributes<HTMLTauPageElement>;
             "tau-ripple": LocalJSX.TauRipple & JSXBase.HTMLAttributes<HTMLTauRippleElement>;
