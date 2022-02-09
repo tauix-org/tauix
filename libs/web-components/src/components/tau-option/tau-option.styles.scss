@@ -7,7 +7,36 @@
 
   display: block;
 
+  background: var(--tau-background);;
+
   .wrapper {
-    justify-content: space-between;
+    width: 100%;
+    height: 35px;
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    gap: 10px;
+
+    background: inherit;
+    color: var(--tau-placeholder);
+
+    font-family: var(--tau-font-family, 'Open Sans', sans-serif);
+    font-size: 0.875em;
+    transition: all 0.15s;
+    padding: 7px 12px;
+    cursor: default;
+    letter-spacing: var(--tau-letter-spacing);
+
+    &.selected {
+      color: var(--tau-text);
+    }
+
+    &:hover {
+      color: var(--tau-text);
+      background: var(--tau-foreground);
+      transition: all 0.3s;
+    }
   }
 }

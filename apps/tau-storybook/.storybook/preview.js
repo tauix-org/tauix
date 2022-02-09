@@ -1,7 +1,7 @@
 // Dependencies
-import { defineCustomElements } from 'tau-components/dist/stencil/loader';
+import { defineCustomElements } from 'tauix/dist/stencil/loader';
 
-import 'tau-components/dist/core/themes/themes.css';
+import '../src/css/themes.css';
 
 defineCustomElements();
 
@@ -14,10 +14,11 @@ export const parameters = {
     },
   },
   themes: {
-    default: 'tau-light',
+    default: 'light',
     list: [
-      { name: 'tau-light', class: 'tau-light', color: '#f5f5f5' },
-      { name: 'tau-dark', class: 'tau-dark', color: '#141518' },
+      { name: 'light', class: 'tau-light', color: '#f5f5f5' },
+      { name: 'dark', class: 'tau-dark', color: '#141518' },
+      { name: 'orange', class: 'tau-orange', color: '#fa9511' },
     ],
   },
   options: {

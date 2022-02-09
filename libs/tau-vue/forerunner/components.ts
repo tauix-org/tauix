@@ -59,7 +59,9 @@ export const TauDrawer = /*@__PURE__*/ defineContainer<JSX.TauDrawer>('tau-drawe
 ]);
 
 
-export const TauFlex = /*@__PURE__*/ defineContainer<JSX.TauFlex>('tau-flex', undefined);
+export const TauFlex = /*@__PURE__*/ defineContainer<JSX.TauFlex>('tau-flex', undefined, [
+  'gap'
+]);
 
 
 export const TauIcon = /*@__PURE__*/ defineContainer<JSX.TauIcon>('tau-icon', undefined, [
@@ -73,7 +75,9 @@ export const TauIcon = /*@__PURE__*/ defineContainer<JSX.TauIcon>('tau-icon', un
 ]);
 
 
-export const TauOption = /*@__PURE__*/ defineContainer<JSX.TauOption>('tau-option', undefined);
+export const TauOption = /*@__PURE__*/ defineContainer<JSX.TauOption>('tau-option', undefined, [
+  'value'
+]);
 
 
 export const TauPage = /*@__PURE__*/ defineContainer<JSX.TauPage>('tau-page', undefined, [
@@ -87,9 +91,6 @@ export const TauRipple = /*@__PURE__*/ defineContainer<JSX.TauRipple>('tau-rippl
 
 
 export const TauSelect = /*@__PURE__*/ defineContainer<JSX.TauSelect>('tau-select', undefined, [
-  'color',
-  'options',
-  'option',
   'placeholder',
   'active',
   'tauChange'

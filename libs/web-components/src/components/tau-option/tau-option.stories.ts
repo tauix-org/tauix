@@ -2,27 +2,32 @@
 import { html } from 'lit-html';
 import { Story } from '@storybook/web-components';
 
+// Utils
+import { TauOptionArgs } from './tau-option.model';
+
 export default {
   title: 'Components/option',
   parameters: {
     status: {
-      type: 'beta',
+      type: 'stable',
     },
   },
 };
 
-const Template: Story = () => html`
+const Template: Story<TauOptionArgs> = args => html`
   <tau-page>
-    <tau-option>
-      
+    <tau-option .value=${args.value}>
+      <tau-icon center name="check"></tau-icon>
+
+      Entrar
     </tau-option>
   </tau-page>
 `;
 
-export const Option: Story = Template.bind({});
+export const Option: Story<TauOptionArgs> = Template.bind({});
 
 Option.storyName = 'default';
 
 Option.args = {
-  open: false,
+  value: 2,
 };

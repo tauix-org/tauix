@@ -1,9 +1,15 @@
 // Dependencies
-import { Component, Host, h, Prop, State, Listen, Element, Event, EventEmitter } from '@stencil/core';
-
-// Utils
-import { SelectOption } from './tau-select.model';
-import { TauVariant } from '../../utils/types';
+import {
+  Component,
+  Host,
+  h,
+  Prop,
+  State,
+  Listen,
+  Element,
+  Event,
+  EventEmitter,
+} from '@stencil/core';
 
 // Assets
 import chevron from '../../assets/icons/outline/chevron-down';
@@ -14,27 +20,25 @@ import chevron from '../../assets/icons/outline/chevron-down';
   shadow: true,
 })
 export class TauSelect {
-  @Prop({ reflect: true }) color: TauVariant;
-
-  @Prop({ reflect: false, mutable: true }) options: SelectOption[] = [];
-
-  @Prop({ reflect: false, mutable: true }) option: SelectOption;
-
   @Prop({ reflect: true }) placeholder: string = 'Selecione';
 
   @Prop({ reflect: true }) active: boolean;
 
   @State() open: boolean;
 
-  @Event() tauChange: EventEmitter<object>;
+  @Event() tauChange: EventEmitter<number>;
 
   @Element() host: HTMLTauSelectElement;
+
+  options: HTMLTauOptionElement[] = [];
 
   @Listen('click', { target: 'window' })
   listenSelectClick(e: MouseEvent) {
     const path = (e as any).path;
+    const el = e.target as HTMLElement;
+    const tag = el.tagName.toLocaleLowerCase();
 
-    if (!path.includes(this.host)) {
+    if (!path.includes(this.host) && tag != 'tau-option') {
       this.open = false;
     }
   }
@@ -50,15 +54,41 @@ export class TauSelect {
     }
   }
 
-  toggleOption = (option: SelectOption) => {
-    this.option = option;
+  toggleOption = (option: HTMLTauOptionElement) => {
+    this.tauChange.emit(option.value);
 
-    this.tauChange.emit(option);
+    const wrapper: HTMLElement = this.host.shadowRoot.querySelector(
+      '.select-header csg-flex'
+    );
+
+    wrapper.innerHTML = option.innerHTML;
 
     this.toggleOpen();
   };
 
+  loadOptions = () => {
+    const slot = this.host.shadowRoot.querySelector('slot');
+
+    const els = Array.from(slot.assignedElements());
+
+    els.map(el => {
+      if (el.tagName.toLocaleLowerCase() == 'tau-option') {
+        const option = el as HTMLTauOptionElement;
+
+        this.options.push(option);
+
+        option.addEventListener('click', () => this.toggleOption(option));
+      } else {
+        this.toggleOpen();
+      }
+    });
+  };
+
   toggleOpen = () => (this.open = this.options?.length == 0 ? false : !this.open);
+
+  componentDidLoad() {
+    this.loadOptions();
+  }
 
   render() {
     return (
@@ -71,30 +101,13 @@ export class TauSelect {
           }}
         >
           <div class="select-header" onClick={this.toggleOpen}>
-            <div>
-              {this.option?.icon && <tau-icon url={this.option.icon} />}
-
-              {this.option?.title || this.placeholder}
-            </div>
+            <csg-flex>{this.placeholder}</csg-flex>
 
             <tau-icon svg={chevron} />
           </div>
 
           <div class="select-body">
-            {this.options &&
-              this.options.map((option: SelectOption) => (
-                <div
-                  class={{
-                    'select-option': true,
-                    selected: option == this.option,
-                  }}
-                  onClick={() => this.toggleOption(option)}
-                >
-                  {option?.icon && <tau-icon url={option.icon} />}
-
-                  {option.title}
-                </div>
-              ))}
+            <slot />
           </div>
         </div>
       </Host>
