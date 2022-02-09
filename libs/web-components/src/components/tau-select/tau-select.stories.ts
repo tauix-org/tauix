@@ -14,13 +14,17 @@ export default {
   },
 };
 
-const Template: Story<SelectArgs> = (args) => html`
+const Template: Story<SelectArgs> = args => html`
   <tau-page>
-    <tau-select
-      style="width: 150px;"
-      .placeholder=${args.placeholder}
-      .options=${args.options}
-    ></tau-select>
+    <tau-select style="width: 150px;" .placeholder=${args.placeholder}>
+      ${args.options.map(
+        option => html` <tau-option>
+          <tau-icon center url=${option.icon}></tau-icon>
+
+          ${option.title}
+        </tau-option>`
+      )}
+    </tau-select>
   </tau-page>
 `;
 
@@ -32,7 +36,7 @@ Select.args = {
   options: [
     {
       title: 'Jinx',
-      icon: '/happy.svg'
+      icon: '/happy.svg',
     },
     {
       icon: '/arquive.svg',

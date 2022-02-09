@@ -43,7 +43,7 @@ export class TauButton {
 
   @Watch('variant')
   applyColor() {
-    const background = getComputedStyle(this.button).background;
+    const background = getComputedStyle(this.button as Element).background;
 
     const color = getColorContrast(background || null);
 

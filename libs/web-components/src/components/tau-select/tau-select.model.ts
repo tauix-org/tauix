@@ -6,5 +6,4 @@ export interface SelectOption {
 export interface SelectArgs {
   options: SelectOption[];
   placeholder: string;
-  color: 'primary' | 'secondary';
 }

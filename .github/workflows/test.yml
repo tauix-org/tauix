@@ -1,0 +1,16 @@
+name: Test Components
+on:
+  pull_request:
+    branches: [master, develop]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+      - run: yarn install
+      - run: cd ./libs/web-components && yarn build
+      - run: cd ./libs/web-components && yarn test
