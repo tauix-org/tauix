@@ -1,1 +1,1 @@
-declare module 'tauix';
+declare module 'tauix/stencil/loader';

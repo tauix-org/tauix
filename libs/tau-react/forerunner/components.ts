@@ -5,8 +5,9 @@ import { createReactComponent } from './react-component-lib';
 
 import type { JSX } from 'tauix';
 
+import { applyPolyfills, defineCustomElements } from 'tauix/stencil/loader';
 
-
+applyPolyfills().then(() => defineCustomElements());
 export const TauAccordion = /*@__PURE__*/createReactComponent<JSX.TauAccordion, HTMLTauAccordionElement>('tau-accordion');
 export const TauAccordionBar = /*@__PURE__*/createReactComponent<JSX.TauAccordionBar, HTMLTauAccordionBarElement>('tau-accordion-bar');
 export const TauAccordionContent = /*@__PURE__*/createReactComponent<JSX.TauAccordionContent, HTMLTauAccordionContentElement>('tau-accordion-content');

@@ -18,7 +18,7 @@ const Template: Story<SelectArgs> = args => html`
   <tau-page>
     <tau-select style="width: 150px;" .placeholder=${args.placeholder}>
       ${args.options.map(
-        option => html` <tau-option>
+        option => html` <tau-option value=${option.value}>
           <tau-icon center url=${option.icon}></tau-icon>
 
           ${option.title}
@@ -36,10 +36,12 @@ Select.args = {
   options: [
     {
       title: 'Jinx',
+      value: 0,
       icon: '/happy.svg',
     },
     {
       icon: '/arquive.svg',
+      value: 1,
       title: 'Vi',
     },
   ],

@@ -5,7 +5,8 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "build": "tsc --skipLibCheck"
+    "sky": "cp ./index.d.ts ./forerunner/",
+    "build": "yarn sky && tsc --skipLibCheck"
   },
   "files": [
     "dist/"
