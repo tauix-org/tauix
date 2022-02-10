@@ -1,5 +1,5 @@
 module.exports = {
-  stories: ['../../../libs/tau-components/src/**/*.stories.ts', '../src/stories/**'],
+  stories: ['../../../libs/web-components/src/**/*.stories.ts', '../src/stories/**'],
   addons: [
     '@storybook/addon-links',
     '@storybook/addon-essentials',

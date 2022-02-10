@@ -6,7 +6,6 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 import { TauAnchor, TauBold, TauButtonType, TauSize, TauVariant } from "./utils/types";
-import { SelectOption } from "./components/tau-select/tau-select.model";
 export namespace Components {
     interface TauAccordion {
         "open": boolean;
@@ -41,6 +40,7 @@ export namespace Components {
         "zIndex": number;
     }
     interface TauFlex {
+        "gap": string;
     }
     interface TauIcon {
         "alt": string;
@@ -52,6 +52,7 @@ export namespace Components {
         "width": number;
     }
     interface TauOption {
+        "value": number;
     }
     interface TauPage {
         "withScroll": boolean;
@@ -61,9 +62,6 @@ export namespace Components {
     }
     interface TauSelect {
         "active": boolean;
-        "color": TauVariant;
-        "option": SelectOption;
-        "options": SelectOption[];
         "placeholder": string;
     }
     interface TauTheme {
@@ -206,6 +204,7 @@ declare namespace LocalJSX {
         "zIndex"?: number;
     }
     interface TauFlex {
+        "gap"?: string;
     }
     interface TauIcon {
         "alt"?: string;
@@ -217,6 +216,7 @@ declare namespace LocalJSX {
         "width"?: number;
     }
     interface TauOption {
+        "value"?: number;
     }
     interface TauPage {
         "withScroll"?: boolean;
@@ -226,10 +226,7 @@ declare namespace LocalJSX {
     }
     interface TauSelect {
         "active"?: boolean;
-        "color"?: TauVariant;
-        "onTauChange"?: (event: CustomEvent<object>) => void;
-        "option"?: SelectOption;
-        "options"?: SelectOption[];
+        "onTauChange"?: (event: CustomEvent<number>) => void;
         "placeholder"?: string;
     }
     interface TauTheme {

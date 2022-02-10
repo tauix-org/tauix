@@ -1,5 +1,5 @@
 // Dependencies
-import { Component, Host, h, Element } from '@stencil/core';
+import { Component, Host, h, Element, Prop } from '@stencil/core';
 
 // Utils
 import { transportAttributes } from '../../utils/functions';
@@ -10,6 +10,8 @@ import { transportAttributes } from '../../utils/functions';
   shadow: true,
 })
 export class TauOption {
+  @Prop() value: number;
+  
   @Element() host: HTMLTauOptionElement;
 
   componentDidLoad() {
