@@ -1,38 +1,26 @@
 {
   "compilerOptions": {
+    "strict": true,
     "allowUnreachableCode": false,
     "allowSyntheticDefaultImports": true,
     "declaration": true,
-    "strict": false,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "esModuleInterop": true,
-    "lib": ["dom", "esnext"],
-    "module": "esnext",
+    "lib": ["dom", "es2015"],
+    "module": "es2015",
     "moduleResolution": "node",
-    "noImplicitAny": false,
-    "noImplicitReturns": false,
-    "noUnusedLocals": false,
-    "noEmitOnError": true,
-    "skipLibCheck": true,
+    "noImplicitAny": true,
+    "noImplicitReturns": true,
+    "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "outDir": "../web-components/dist/react",
-    "suppressImplicitAnyIndexErrors": true,
     "removeComments": false,
+    "outDir": "../web-components/dist/react",
     "sourceMap": true,
     "jsx": "react",
-    "target": "esnext",
-    "allowJs": true,
-    "checkJs": false,
-    "forceConsistentCasingInFileNames": true
+    "target": "es2015"
   },
-  "include": ["forerunner/**/*.ts", "forerunner/**/*.tsx"],
-  "exclude": ["node_modules", "./forerunner/components.ts"],
-  "files": ["./index.ts"],
+  "exclude": ["node_modules"],
   "compileOnSave": false,
-  "errorReporting": {
-    "excludeCodes": [7005]
-  },
-
   "buildOnSave": false
 }

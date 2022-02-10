@@ -5,8 +5,9 @@ import { defineContainer } from './vue-component-lib/utils';
 
 import type { JSX } from 'tauix';
 
+import { applyPolyfills, defineCustomElements } from 'tauix/stencil/loader';
 
-
+applyPolyfills().then(() => defineCustomElements());
 
 export const TauAccordion = /*@__PURE__*/ defineContainer<JSX.TauAccordion>('tau-accordion', undefined, [
   'open',
