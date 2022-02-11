@@ -5,10 +5,6 @@ export const getColorContrast = (color: string) => {
     if (hydrate) {
       const rain = hydrate.includes('#') ? convertHexToRGB(hydrate) : hydrate;
 
-      if (rain.includes('rgba') && rain.includes(', 0)')) {
-        return 'var(--tau-primary)';
-      }
-
       const rgb = rain?.split(')')[0]?.split('rgb(')[1];
 
       if (rgb) {
