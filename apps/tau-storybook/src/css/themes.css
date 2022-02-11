@@ -18,14 +18,14 @@
 }
 
 .tau-dark {
-  --tau-primary: #ffffff;
-  --tau-hover: #e2ecff;
-  --tau-focus: #306cdb;
+  --tau-primary: #4307a5;
+  --tau-hover: #4307a5;
+  --tau-focus: #4307a5;
   --tau-text: #353535;
   --tau-border: #cac9c9;
   --tau-placeholder: #818181;
   --tau-background: #FFFFFF;
-  --tau-foreground: #e3eeff;
+  --tau-foreground: #eae3ff;
   --tau-page: #FFFFFF;
   --tau-font-family: 'Poppins', sans-serif;
   --tau-letter-spacing: 0.4px ;
@@ -48,4 +48,22 @@
   --tau-font-size: 95%;
   --tau-radius: 5px;
 }
+
+
+.tau-pink-dark {
+  --tau-primary: #35062a;
+  --tau-hover: #35062a;
+  --tau-focus: #35062a;
+  --tau-text: #353535;
+  --tau-border: #cac9c9;
+  --tau-placeholder: #818181;
+  --tau-background: #FFFFFF;
+  --tau-foreground: #ffe3f7;
+  --tau-page: #FFFFFF;
+  --tau-font-family: 'Poppins', sans-serif;
+  --tau-letter-spacing: 0.4px ;
+  --tau-font-size: 95%;
+  --tau-radius: 5px;
+}
+
 

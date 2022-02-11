@@ -10,7 +10,7 @@ import {
 } from '@stencil/core';
 
 // Utils
-import { applyStyleSlotted, getColorContrast } from '../../utils/functions';
+import { applyStyles, applyStyleSlotted, getColorContrast } from '../../utils/functions';
 import { TauBold, TauButtonType, TauSize, TauVariant } from '../../utils/types';
 
 @Component({
@@ -42,14 +42,32 @@ export class TauButton {
   button: HTMLElement;
 
   @Watch('variant')
-  applyColor() {
-    const background = getComputedStyle(this.button as Element).background;
+  applyColorStyles() {
+    const primary = getComputedStyle(this.button as Element, null).getPropertyValue(
+      '--tau-primary'
+    );
 
-    const color = getColorContrast(background || null);
+    if (this.variant == 'solid') {
+      applyStyles(
+        {
+          background: primary,
+          color: getColorContrast(primary),
+        },
+        this.button
+      );
+    } else {
+      applyStyles(
+        {
+          background: 'rgba(0,0,0,0)',
+        },
+        this.button
+      );
 
-    this.button.style.color = this.variant == 'outline' ? 'var(--tau-primary)' : color;
-
-    applyStyleSlotted({ color }, this.button.querySelector('slot'));
+      applyStyleSlotted(
+        { color: 'var(--tau-primary)' },
+        this.button.querySelector('slot')
+      );
+    }
   }
 
   componentDidLoad() {
@@ -57,9 +75,9 @@ export class TauButton {
 
     this.button = this.host.shadowRoot.querySelector('button, a');
 
-    this.applyColor();
+    this.applyColorStyles();
 
-    window.addEventListener('tauTheme', this.applyColor);
+    window.addEventListener('tauTheme', this.applyColorStyles);
   }
 
   clickButton = () => {

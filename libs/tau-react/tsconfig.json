@@ -28,6 +28,7 @@
   },
   "include": ["forerunner/**/*.ts", "forerunner/**/*.tsx"],
   "exclude": ["node_modules"],
+  "files": ["index.ts"],
   "compileOnSave": false,
   "buildOnSave": false
 }
