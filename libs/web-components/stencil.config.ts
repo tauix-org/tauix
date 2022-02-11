@@ -20,6 +20,9 @@ export const config: Config = {
         },
       ],
     },
+    {
+      type: 'dist-custom-elements',
+    },
     { type: 'dist-hydrate-script', dir: 'dist/hydrate' },
     reactOutputTarget({
       componentCorePackage: 'tauix',
@@ -35,6 +38,7 @@ export const config: Config = {
       proxiesFile: '../tau-vue/forerunner/components.ts',
       includeDefineCustomElements: true,
       includePolyfills: true,
+      customElementsDir: '',
       excludeComponents,
     }),
   ],

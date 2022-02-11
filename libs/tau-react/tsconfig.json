@@ -6,9 +6,15 @@
     "declaration": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
+    "noEmitOnError": true,
+    "skipLibCheck": true,
+    "suppressImplicitAnyIndexErrors": true,
+    "allowJs": true,
+    "checkJs": false,
     "esModuleInterop": true,
-    "lib": ["dom", "es2015"],
-    "module": "es2015",
+    "forceConsistentCasingInFileNames": true,
+    "lib": ["dom", "esnext"],
+    "module": "esnext",
     "moduleResolution": "node",
     "noImplicitAny": true,
     "noImplicitReturns": true,
@@ -18,8 +24,9 @@
     "outDir": "../web-components/dist/react",
     "sourceMap": true,
     "jsx": "react",
-    "target": "es2015"
+    "target": "esnext"
   },
+  "include": ["forerunner/**/*.ts", "forerunner/**/*.tsx"],
   "exclude": ["node_modules"],
   "compileOnSave": false,
   "buildOnSave": false
