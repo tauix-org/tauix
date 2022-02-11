@@ -14,11 +14,12 @@ export const parameters = {
     },
   },
   themes: {
-    default: 'light',
+    default: 'tau-pink-dark',
     list: [
-      { name: 'light', class: 'tau-light', color: '#f5f5f5' },
-      { name: 'dark', class: 'tau-dark', color: '#141518' },
-      { name: 'orange', class: 'tau-orange', color: '#fa9511' },
+      { name: 'tau-light', class: 'tau-light', color: '#f5f5f5' },
+      { name: 'tau-dark', class: 'tau-dark', color: '#141518' },
+      { name: 'tau-orange', class: 'tau-orange', color: '#fa9511' },
+      { name: 'tau-pink-dark', class: 'tau-pink-dark', color: '#35062a' },
     ],
   },
   options: {
