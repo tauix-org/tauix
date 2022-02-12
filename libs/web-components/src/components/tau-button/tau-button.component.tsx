@@ -47,6 +47,10 @@ export class TauButton {
       '--tau-primary'
     );
 
+    if (!primary) {
+      this.applyColorStyles();
+    }
+
     if (this.variant == 'solid') {
       applyStyles(
         {
