@@ -23,7 +23,7 @@
     "removeComments": false,
     "outDir": "../web-components/dist/react",
     "sourceMap": true,
-    "jsx": "react",
+    "jsx": "react-jsx",
     "target": "esnext"
   },
   "include": ["forerunner/**/*.ts", "forerunner/**/*.tsx"],
