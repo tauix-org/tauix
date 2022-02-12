@@ -3,7 +3,7 @@
 /* auto-generated react proxies */
 import { createReactComponent } from './react-component-lib';
 
-import type { JSX } from 'tauix';
+import type { JSX } from 'tauix/stencil/loader';
 
 import { applyPolyfills, defineCustomElements } from 'tauix/stencil/loader';
 

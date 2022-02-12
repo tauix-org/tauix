@@ -38,7 +38,6 @@ export const config: Config = {
       proxiesFile: '../tau-vue/forerunner/components.ts',
       includeDefineCustomElements: true,
       includePolyfills: true,
-      customElementsDir: '',
       excludeComponents,
     }),
   ],
