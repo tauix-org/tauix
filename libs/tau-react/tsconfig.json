@@ -22,7 +22,7 @@
     "noUnusedParameters": true,
     "removeComments": false,
     "outDir": "../web-components/dist/react",
-    "sourceMap": true,
+    "sourceMap": false,
     "jsx": "react-jsx",
     "target": "esnext"
   },

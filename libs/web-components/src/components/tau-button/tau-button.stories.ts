@@ -30,7 +30,7 @@ export default {
 };
 
 const Template: Story = args => html`
-  <div>
+  <tau-theme>
     <tau-button
       @tauSubmit=${() => alert('Request Sumbit Form')}
       @tauReset=${() => alert('Request Reset Form')}
@@ -44,7 +44,7 @@ const Template: Story = args => html`
     >
       Entrar
     </tau-button>
-  </div>
+  </tau-theme>
 `;
 
 export const Button: Story = Template.bind({});

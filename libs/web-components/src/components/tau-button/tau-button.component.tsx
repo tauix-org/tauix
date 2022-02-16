@@ -7,10 +7,11 @@ import {
   Prop,
   EventEmitter,
   Watch,
+  State,
 } from '@stencil/core';
 
 // Utils
-import { applyStyles, applyStyleSlotted, getColorContrast } from '../../utils/functions';
+import { applyStyles, applyStyleSlotted } from '../../utils/functions';
 import { TauBold, TauButtonType, TauSize, TauVariant } from '../../utils/types';
 
 @Component({
@@ -33,6 +34,8 @@ export class TauButton {
 
   @Prop({ reflect: true }) href: string;
 
+  @State() background: string;
+
   @Event() tauSubmit: EventEmitter<boolean>;
 
   @Event() tauReset: EventEmitter<boolean>;
@@ -43,23 +46,7 @@ export class TauButton {
 
   @Watch('variant')
   applyColorStyles() {
-    const primary = getComputedStyle(this.button as Element, null).getPropertyValue(
-      '--tau-primary'
-    );
-
-    if (!primary) {
-      this.applyColorStyles();
-    }
-
-    if (this.variant == 'solid') {
-      applyStyles(
-        {
-          background: primary,
-          color: getColorContrast(primary),
-        },
-        this.button
-      );
-    } else {
+    if (this.variant == 'outline') {
       applyStyles(
         {
           background: 'rgba(0,0,0,0)',
@@ -71,6 +58,13 @@ export class TauButton {
         { color: 'var(--tau-primary)' },
         this.button.querySelector('slot')
       );
+    } else {
+      applyStyles(
+        {
+          background: 'var(--tau-primary)',
+        },
+        this.button
+      );
     }
   }
 
@@ -80,8 +74,6 @@ export class TauButton {
     this.button = this.host.shadowRoot.querySelector('button, a');
 
     this.applyColorStyles();
-
-    window.addEventListener('tauTheme', this.applyColorStyles);
   }
 
   clickButton = () => {

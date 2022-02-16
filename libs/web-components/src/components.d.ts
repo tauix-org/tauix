@@ -65,6 +65,7 @@ export namespace Components {
         "placeholder": string;
     }
     interface TauTheme {
+        "constrast": boolean;
         "theme": string;
     }
 }
@@ -230,6 +231,7 @@ declare namespace LocalJSX {
         "placeholder"?: string;
     }
     interface TauTheme {
+        "constrast"?: boolean;
         "onTauLimn"?: (event: CustomEvent<object>) => void;
         "theme"?: string;
     }
