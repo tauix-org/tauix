@@ -9,9 +9,12 @@ import { Component, Host, h, Prop } from '@stencil/core';
 export class TauFlex {
   @Prop() gap: string;
 
+  @Prop() flex: number;
+
   render() {
     const styles = {
       gap: this.gap,
+      flex: this.flex.toString(),
     };
 
     return (

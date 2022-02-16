@@ -40,6 +40,7 @@ export namespace Components {
         "zIndex": number;
     }
     interface TauFlex {
+        "flex": number;
         "gap": string;
     }
     interface TauIcon {
@@ -205,6 +206,7 @@ declare namespace LocalJSX {
         "zIndex"?: number;
     }
     interface TauFlex {
+        "flex"?: number;
         "gap"?: string;
     }
     interface TauIcon {

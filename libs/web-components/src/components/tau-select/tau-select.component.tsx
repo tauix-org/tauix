@@ -57,6 +57,10 @@ export class TauSelect {
   toggleOption = (option: HTMLTauOptionElement) => {
     this.tauChange.emit(option.value);
 
+    this.clearOptions();
+    
+    option.classList.add('selected');
+
     const wrapper: HTMLElement = this.host.shadowRoot.querySelector(
       '.select-header csg-flex'
     );
@@ -65,6 +69,8 @@ export class TauSelect {
 
     this.toggleOpen();
   };
+
+  clearOptions = () => this.options.map(opt => opt.classList.remove('selected'));
 
   loadOptions = () => {
     const slot = this.host.shadowRoot.querySelector('slot');
