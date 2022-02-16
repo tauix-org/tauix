@@ -49,7 +49,9 @@ export class TauTheme {
 
     const color = getColorContrast(primary);
 
-    this.host.style.setProperty('--tau-text', color);
+    if (color) {
+      this.host.style.setProperty('--tau-text', color);
+    }
   };
 
   hydrateTheme = () => {
