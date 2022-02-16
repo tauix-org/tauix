@@ -74,7 +74,7 @@
 
       top: 44px;
       pointer-events: none;
-      border-radius: 5px;
+      border-radius: var(--tau-radius);
       opacity: 0;
       z-index: 10;
 
@@ -109,11 +109,7 @@
 
           margin-right: 10px;
         }
-
-        &.selected {
-          color: var(--tau-text);
-        }
-
+        
         &:hover {
           color: var(--tau-text);
           background: var(--tau-foreground);
