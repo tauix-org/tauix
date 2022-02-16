@@ -1,5 +1,15 @@
 // Dependencies
-import { Component, Host, h, Prop, Watch, Element, EventEmitter, Event } from '@stencil/core';
+import {
+  Component,
+  Host,
+  h,
+  Prop,
+  Watch,
+  Element,
+  EventEmitter,
+  Event,
+} from '@stencil/core';
+import { getColorContrast } from '../../utils/functions';
 
 @Component({
   tag: 'tau-theme',
@@ -8,6 +18,8 @@ import { Component, Host, h, Prop, Watch, Element, EventEmitter, Event } from '@
 })
 export class TauTheme {
   @Prop() theme: string = 'tau-light';
+
+  @Prop() constrast: boolean = true;
 
   @Event() tauLimn: EventEmitter<object>;
 
@@ -30,6 +42,16 @@ export class TauTheme {
     this.tauLimn.emit({ old: this.theme, current: e });
   }
 
+  setContrast = () => {
+    const primary = getComputedStyle(this.host as Element).getPropertyValue(
+      '--tau-primary'
+    );
+
+    const color = getColorContrast(primary);
+
+    this.host.style.setProperty('--tau-text', color);
+  };
+
   hydrateTheme = () => {
     const eventLimn = document.createEvent('CustomEvent');
 
@@ -40,6 +62,10 @@ export class TauTheme {
     this.toggleTheme(this.theme);
 
     this.hydrateTheme();
+
+    if (this.constrast) {
+      this.setContrast();
+    }
   }
 
   render() {
