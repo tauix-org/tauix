@@ -40,6 +40,7 @@ export namespace Components {
         "zIndex": number;
     }
     interface TauFlex {
+        "flex": number;
         "gap": string;
     }
     interface TauIcon {
@@ -63,6 +64,11 @@ export namespace Components {
     interface TauSelect {
         "active": boolean;
         "placeholder": string;
+    }
+    interface TauSwitch {
+        "checked": boolean;
+        "disable": boolean;
+        "size": TauSize;
     }
     interface TauTheme {
         "constrast": boolean;
@@ -142,6 +148,12 @@ declare global {
         prototype: HTMLTauSelectElement;
         new (): HTMLTauSelectElement;
     };
+    interface HTMLTauSwitchElement extends Components.TauSwitch, HTMLStencilElement {
+    }
+    var HTMLTauSwitchElement: {
+        prototype: HTMLTauSwitchElement;
+        new (): HTMLTauSwitchElement;
+    };
     interface HTMLTauThemeElement extends Components.TauTheme, HTMLStencilElement {
     }
     var HTMLTauThemeElement: {
@@ -161,6 +173,7 @@ declare global {
         "tau-page": HTMLTauPageElement;
         "tau-ripple": HTMLTauRippleElement;
         "tau-select": HTMLTauSelectElement;
+        "tau-switch": HTMLTauSwitchElement;
         "tau-theme": HTMLTauThemeElement;
     }
 }
@@ -205,6 +218,7 @@ declare namespace LocalJSX {
         "zIndex"?: number;
     }
     interface TauFlex {
+        "flex"?: number;
         "gap"?: string;
     }
     interface TauIcon {
@@ -230,6 +244,12 @@ declare namespace LocalJSX {
         "onTauChange"?: (event: CustomEvent<number>) => void;
         "placeholder"?: string;
     }
+    interface TauSwitch {
+        "checked"?: boolean;
+        "disable"?: boolean;
+        "onTauChange"?: (event: CustomEvent<boolean>) => void;
+        "size"?: TauSize;
+    }
     interface TauTheme {
         "constrast"?: boolean;
         "onTauLimn"?: (event: CustomEvent<object>) => void;
@@ -248,6 +268,7 @@ declare namespace LocalJSX {
         "tau-page": TauPage;
         "tau-ripple": TauRipple;
         "tau-select": TauSelect;
+        "tau-switch": TauSwitch;
         "tau-theme": TauTheme;
     }
 }
@@ -267,6 +288,7 @@ declare module "@stencil/core" {
             "tau-page": LocalJSX.TauPage & JSXBase.HTMLAttributes<HTMLTauPageElement>;
             "tau-ripple": LocalJSX.TauRipple & JSXBase.HTMLAttributes<HTMLTauRippleElement>;
             "tau-select": LocalJSX.TauSelect & JSXBase.HTMLAttributes<HTMLTauSelectElement>;
+            "tau-switch": LocalJSX.TauSwitch & JSXBase.HTMLAttributes<HTMLTauSwitchElement>;
             "tau-theme": LocalJSX.TauTheme & JSXBase.HTMLAttributes<HTMLTauThemeElement>;
         }
     }

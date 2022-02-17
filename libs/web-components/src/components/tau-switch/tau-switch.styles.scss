@@ -1,0 +1,87 @@
+:host {
+  * {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+  }
+
+  display: block;
+
+  width: fit-content;
+  height: fit-content;
+
+  .wrapper {
+    width: 58px;
+    height: 30px;
+
+    border-radius: 30px;
+    position: relative;
+    overflow: hidden;
+
+    background: var(--tau-foreground);
+    border: 1px solid transparent;
+    transition: all 0.3s;
+
+    div {
+      width: 24px;
+      height: 22px;
+
+      display: block;
+
+      border-radius: inherit;
+      background: #fff;
+
+      position: absolute;
+
+      top: 3px;
+      right: calc(calc(58px - 24px) - 5px);
+
+      transition: all 0.15s;
+    }
+
+    &.small {
+      width: 45px;
+      height: 24px;
+
+      div {
+        width: 17px;
+
+        height: 16px;
+
+        right: calc(calc(45px - 17px) - 5px);
+      }
+    }
+
+    &.large {
+      width: 67px;
+      height: 35px;
+
+      div {
+        width: 30px;
+
+        height: 27px;
+
+        right: calc(calc(67px - 30px) - 5px);
+      }
+    }
+
+    &.checked {
+      background: var(--tau-primary);
+      border-color: var(--tau-primary);
+
+      &,
+      div {
+        transition: all 0.3s;
+      }
+
+      div {
+        right: 3px;
+        left: none;
+      }
+    }
+
+    &.disable {
+      opacity: 0.5;
+    }
+  }
+}
