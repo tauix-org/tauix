@@ -25,6 +25,8 @@ export class TauTheme {
 
   @Element() host: HTMLTauThemeElement;
 
+  els: string[] = ['tau-button', 'tau-checkbox'];
+
   @Watch('theme')
   toggleTheme(e: string) {
     const clss = this.host.classList;
@@ -50,7 +52,13 @@ export class TauTheme {
     const color = getColorContrast(primary);
 
     if (color) {
-      this.host.style.setProperty('--tau-text', color);
+      this.els.forEach(el => {
+        const cels = this.host.querySelectorAll(el);
+
+        cels.forEach((cel: HTMLElement) =>
+          cel.style.setProperty('--tau-text', getColorContrast(primary))
+        );
+      });
     }
   };
 
