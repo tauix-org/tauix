@@ -45,20 +45,22 @@ export class TauTheme {
   }
 
   setContrast = () => {
-    const primary = getComputedStyle(this.host as Element).getPropertyValue(
-      '--tau-primary'
-    );
+    if (this.constrast) {
+      const primary = getComputedStyle(this.host as Element).getPropertyValue(
+        '--tau-primary'
+      );
 
-    const color = getColorContrast(primary);
+      const color = getColorContrast(primary);
 
-    if (color) {
-      this.els.forEach(el => {
-        const cels = this.host.querySelectorAll(el);
+      if (color) {
+        this.els.forEach(el => {
+          const cels = this.host.querySelectorAll(el);
 
-        cels.forEach((cel: HTMLElement) =>
-          cel.style.setProperty('--tau-text', getColorContrast(primary))
-        );
-      });
+          cels.forEach((cel: HTMLElement) =>
+            cel.style.setProperty('--tau-text', getColorContrast(primary))
+          );
+        });
+      }
     }
   };
 
@@ -73,9 +75,9 @@ export class TauTheme {
 
     this.hydrateTheme();
 
-    if (this.constrast) {
-      this.setContrast();
-    }
+    this.setContrast();
+
+    window.addEventListener('tauLimn', () => this.setContrast());
   }
 
   render() {
