@@ -58,7 +58,7 @@ export class TauSelect {
     this.tauChange.emit(option.value);
 
     this.clearOptions();
-    
+
     option.classList.add('selected');
 
     const wrapper: HTMLElement = this.host.shadowRoot.querySelector(
