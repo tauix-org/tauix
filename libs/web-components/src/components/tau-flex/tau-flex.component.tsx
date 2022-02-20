@@ -13,8 +13,8 @@ export class TauFlex {
 
   render() {
     const styles = {
-      gap: this.gap,
-      flex: this.flex.toString(),
+      gap: `${this.gap}`,
+      flex: `${this.flex}`,
     };
 
     return (
