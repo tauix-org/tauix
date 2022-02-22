@@ -48,6 +48,12 @@ export class TauButton {
     this.button = this.host.shadowRoot.querySelector('button, a');
   }
 
+  componentDidRender() {
+    const eventLimn = document.createEvent('CustomEvent');
+
+    eventLimn.initEvent('tauLimnChange', true, false);
+  }
+
   clickButton = () => {
     !this.disable &&
       (this.type == 'submit' && this.tauSubmit.emit(true),
