@@ -48,11 +48,23 @@ export class TauButton {
     this.button = this.host.shadowRoot.querySelector('button, a');
   }
 
+  connectedCallback() {
+    this.triggerConstrast();
+  }
+
   componentDidRender() {
+    this.triggerConstrast();
+  }
+
+  componentDidUpdate() {
+    this.triggerConstrast();
+  }
+
+  triggerConstrast = () => {
     const eventLimn = document.createEvent('CustomEvent');
 
     eventLimn.initEvent('tauLimnChange', true, false);
-  }
+  };
 
   clickButton = () => {
     !this.disable &&
