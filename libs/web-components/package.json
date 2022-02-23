@@ -1,6 +1,6 @@
 {
   "name": "tauix",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "Tau UI Components",
   "main": "./dist/stencil/index.cjs.js",
   "module": "./dist/stencil/index.js",

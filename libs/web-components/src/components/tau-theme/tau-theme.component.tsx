@@ -74,6 +74,10 @@ export class TauTheme {
     eventLimn.initEvent('tauLimn', true, false);
   };
 
+  connectedCallback() {
+    this.setContrast();
+  }
+
   componentDidLoad() {
     this.toggleTheme(this.theme);
 
