@@ -50,11 +50,7 @@ export class TauTheme {
         '--tau-primary'
       );
 
-      console.log('PRIMARY: ', primary);
-
       const color = getColorContrast(primary);
-
-      console.log('COLOR: ', color);
 
       if (color) {
         this.els.forEach(el => {
@@ -86,6 +82,7 @@ export class TauTheme {
     this.setContrast();
 
     window.addEventListener('tauLimn', () => this.setContrast());
+    window.addEventListener('tauLimnChange', () => this.setContrast());
   }
 
   render() {
