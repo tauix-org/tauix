@@ -8,6 +8,7 @@ import {
   Element,
   EventEmitter,
   Event,
+  Listen,
 } from '@stencil/core';
 import { getColorContrast } from '../../utils/functions';
 
@@ -42,6 +43,11 @@ export class TauTheme {
     this.hydrateTheme();
 
     this.tauLimn.emit({ old: this.theme, current: e });
+  }
+
+  @Listen('tauContrast')
+  appyContrast() {
+    this.setContrast();
   }
 
   setContrast = () => {
@@ -82,7 +88,6 @@ export class TauTheme {
     this.setContrast();
 
     window.addEventListener('tauLimn', () => this.setContrast());
-    window.addEventListener('tauLimnChange', () => this.setContrast());
   }
 
   render() {

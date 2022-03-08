@@ -195,6 +195,7 @@ declare namespace LocalJSX {
         "bold"?: TauBold;
         "disable"?: boolean;
         "href"?: string;
+        "onTauContrast"?: (event: CustomEvent<boolean>) => void;
         "onTauReset"?: (event: CustomEvent<boolean>) => void;
         "onTauSubmit"?: (event: CustomEvent<boolean>) => void;
         "size"?: TauSize;
