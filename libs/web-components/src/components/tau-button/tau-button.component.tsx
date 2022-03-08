@@ -38,6 +38,8 @@ export class TauButton {
 
   @Event() tauReset: EventEmitter<boolean>;
 
+  @Event() tauContrast: EventEmitter<boolean>;
+
   @Element() host: HTMLTauButtonElement;
 
   button: HTMLElement;
@@ -45,31 +47,15 @@ export class TauButton {
   componentDidLoad() {
     this.host.addEventListener('click', this.clickButton);
 
+    this.tauContrast.emit(true);
+
     this.button = this.host.shadowRoot.querySelector('button, a');
   }
-
-  connectedCallback() {
-    this.triggerConstrast();
-  }
-
-  componentDidRender() {
-    this.triggerConstrast();
-  }
-
-  componentDidUpdate() {
-    this.triggerConstrast();
-  }
-
-  triggerConstrast = () => {
-    const eventLimn = document.createEvent('CustomEvent');
-
-    eventLimn.initEvent('tauLimnChange', true, false);
-  };
-
   clickButton = () => {
-    !this.disable &&
-      (this.type == 'submit' && this.tauSubmit.emit(true),
-      this.type == 'reset' && this.tauReset.emit(true));
+    if (!this.disable) {
+      this.type == 'reset' && this.tauReset.emit(true);
+      this.type == 'submit' && this.tauSubmit.emit(true);
+    }
   };
 
   render() {
