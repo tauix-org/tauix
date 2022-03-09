@@ -13,8 +13,9 @@
     "checkJs": false,
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
-    "lib": ["dom", "esnext"],
-    "module": "esnext",
+    "lib": ["dom", "ES2016"],
+    "module": "commonjs",
+    "target": "es2016",
     "moduleResolution": "node",
     "noImplicitAny": true,
     "noImplicitReturns": true,
@@ -23,8 +24,7 @@
     "removeComments": false,
     "outDir": "../web-components/dist/react",
     "sourceMap": false,
-    "jsx": "react-jsx",
-    "target": "esnext"
+    "jsx": "react-jsx"
   },
   "include": ["forerunner/**/*.ts", "forerunner/**/*.tsx"],
   "exclude": ["node_modules"],
