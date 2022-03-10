@@ -6,23 +6,25 @@
   "license": "MIT",
   "scripts": {
     "sky": "cp ./index.d.ts ./forerunner/",
-    "build": "yarn sky && tsc --skipLibCheck"
+    "build": "yarn sky && yarn tsc && yarn tsb",
+    "tsb": "tsup --format esm,cjs"
   },
   "files": [
     "dist/"
   ],
   "dependencies": {
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2"
+    "react": "^16.7.0",
+    "react-dom": "^16.7.0"
   },
   "devDependencies": {
     "@types/node": "^17.0.15",
     "@types/react": "^17.0.38",
     "@types/react-dom": "^17.0.11",
+    "tsup": "^5.12.0",
     "typescript": "^4.5.4"
   },
   "peerDependencies": {
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2"
+    "react": "^16.7.0",
+    "react-dom": "^16.7.0"
   }
 }
