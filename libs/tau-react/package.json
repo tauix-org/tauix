@@ -8,7 +8,7 @@
   "license": "MIT",
   "scripts": {
     "skip": "cp ./index.d.ts ./forerunner/",
-    "build": "yarn skip && yarn tsb",
+    "build": "yarn skip && yarn tsc && yarn tsb",
     "tsb": "tsup --format cjs"
   },
   "exports": {
