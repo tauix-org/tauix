@@ -23,4 +23,4 @@ jobs:
       - run: cd ./libs/web-components && bash ./scripts/publish.sh
       - run: cd ./libs/web-components/dist && npm publish
       - run: |
-          curl -X POST -H "Content-Type: application/json" -d '{"content": "Hey, uma nova versão de Tau UI foi lançada !"}' ${{ secrets.DISCORD_WEBHOOK }}
+          curl -X POST -H "Content-Type: application/json" -d '{"content": "Hey, <@&946152735919722586> uma nova versão de Tau UI foi lançada !"}' ${{ secrets.DISCORD_WEBHOOK }}
