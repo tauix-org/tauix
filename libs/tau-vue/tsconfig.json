@@ -20,7 +20,7 @@
     "noUnusedParameters": true,
     "outDir": "../web-components/dist/vue",
     "removeComments": false,
-    "sourceMap": true,
+    "sourceMap": false,
     "jsx": "react"
   },
   "errorReporting": {
